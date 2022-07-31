@@ -13,6 +13,7 @@ function PopupWithForm(props) {
                     noValidate
                 >
                     {props.children}
+                    <button type="submit" className="popup__btn" onClick={props.closeAllPopups}>{props.button}</button>
                 </form>
                 <button
                     type="button"

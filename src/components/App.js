@@ -13,7 +13,7 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState(false, []);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(!isEditAvatarPopupOpen);
@@ -33,7 +33,7 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setSelectedCard(false, []);
+    setSelectedCard({});
   }
 
   return (
@@ -50,6 +50,7 @@ function App() {
       <PopupWithForm
         name="profile"
         title="Редактировать профиль"
+        button="Сохранить"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
         children={
@@ -80,7 +81,6 @@ function App() {
               />
               <span className="popup__input-error" id="input-job-error"></span>
             </label>
-            <button type="submit" className="popup__btn" onClick={closeAllPopups}>Сохранить</button>
           </>
         }
       />
@@ -88,6 +88,7 @@ function App() {
       <PopupWithForm
         name="add-card"
         title="Новое место"
+        button="Создать"
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
         children={
@@ -116,13 +117,13 @@ function App() {
               />
               <span className="popup__input-error" id="input-link-error"></span>
             </label>
-            <button type="submit" className="popup__btn" onClick={closeAllPopups}>Создать</button>
           </>
         }
       />
       <PopupWithForm
         name="avatar"
         title="Обновить аватар"
+        button="Сохранить"
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
         children={
@@ -138,17 +139,6 @@ function App() {
               />
               <span className="popup__input-error" id="input-avatar-error"></span>
             </label>
-            <button type="submit" className="popup__btn" onClick={closeAllPopups}>Сохранить</button>
-          </>
-        }
-      />
-      <PopupWithForm
-        name="delete-card"
-        title="Вы уверены?"
-        onClose={closeAllPopups}
-        children={
-          <>
-            <button type="submit" className="popup__btn" onClick={closeAllPopups}>Да</button>
           </>
         }
       />
