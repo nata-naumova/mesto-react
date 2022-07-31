@@ -7,7 +7,7 @@ export function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
     const [userDescription, setUserDescription] = React.useState("");
     const [userAvatar, setUserAvatar] = React.useState("");
 
-    const [cards, getCards] = React.useState([]);
+    const [cards, setCards] = React.useState([]);
 
     React.useEffect(() => {
         Promise.all([api.getInitialCards(), api.getUserInfo()])
@@ -16,7 +16,7 @@ export function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
                 setUserDescription(userData.about);
                 setUserAvatar(userData.avatar);
 
-                getCards(initialCards);
+                setCards(initialCards);
             })
             .catch(() => {
                 console.log('Что-то пошло не так :(')
