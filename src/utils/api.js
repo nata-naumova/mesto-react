@@ -63,16 +63,16 @@ class Api {
     }
 
     /* ---------- Постановка и снятие лайка ----------- */
-    setLike(cardId) {
-        return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    setLike(card) {
+        return fetch(`${this._baseUrl}/cards/likes/${card._id}`, {
             method: 'PUT',
             headers: this._headers
         })
             .then(res => this._parseResponse(res));
     }
 
-    deleteLike(cardId) {
-        return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    deleteLike(card) {
+        return fetch(`${this._baseUrl}/cards/likes/${card._id}`, {
             method: 'DELETE',
             headers: this._headers
         })

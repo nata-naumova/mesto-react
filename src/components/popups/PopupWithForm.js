@@ -11,9 +11,14 @@ function PopupWithForm(props) {
                     name={`${props.name}ProfileForm`}
                     className={`popup__form ${props.name}-profile`}
                     noValidate
+                    onSubmit={props.onSubmit}
                 >
                     {props.children}
-                    <button type="submit" className="popup__btn" onClick={props.closeAllPopups}>{props.button}</button>
+                    <button
+                        type="submit"
+                        className="popup__btn"
+                        onClick={props.closeAllPopups}
+                    >{props.button}</button>
                 </form>
                 <button
                     type="button"
