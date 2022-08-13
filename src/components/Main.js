@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
 import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
-import { CurrentCardContext } from '../contexts/CurrentCardContext.js';
 
 export function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCardLike, onCardDelete }) {
     /* ---------- Подписка на контекст ----------- */
     const currentUser = useContext(CurrentUserContext);
-    const currentCard = useContext(CurrentCardContext);
     const { name, about, avatar } = currentUser;
 
     return (
@@ -46,21 +44,14 @@ export function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, car
 
             <section className="elements">
                 {
-                    currentCard.map((card) => {
-                        const isOwn = card.owner._id === currentUser._id;
-                        const isLiked = card.likes.some(i => i._id === currentUser._id);
+                    cards.map((card) => {
                         return (
                             <Card
                                 card={card}
                                 key={card._id}
-                                likes={card.likes}
-                                name={card.name}
-                                link={card.link}
                                 onCardClick={onCardClick}
                                 onCardLike={onCardLike}
                                 onCardDelete={onCardDelete}
-                                isOwn={isOwn}
-                                isLiked={isLiked}
                             />
                         )
                     })

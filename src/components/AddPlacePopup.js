@@ -31,36 +31,35 @@ export function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
-            children={
-                <>
-                    <label htmlFor="input-name" className="popup__field">
-                        <input
-                            type="text"
-                            id="input-name"
-                            className="popup__input"
-                            name="name"
-                            placeholder="Название"
-                            required
-                            minLength="2"
-                            maxLength="30"
-                            onChange={handleCardNameChange}
-                        />
-                        <span className="popup__input-error" id="input-name-error"></span>
-                    </label>
-                    <label htmlFor="input-link" className="popup__field">
-                        <input
-                            type="url"
-                            id="input-link"
-                            className="popup__input"
-                            name="link"
-                            placeholder="Ссылка на картинку"
-                            required
-                            onChange={handleCardLinkChange}
-                        />
-                        <span className="popup__input-error" id="input-link-error"></span>
-                    </label>
-                </>
-            }
-        />
+        >
+            <>
+                <label htmlFor="input-name" className="popup__field">
+                    <input
+                        type="text"
+                        id="input-name"
+                        className="popup__input"
+                        name="name"
+                        placeholder="Название"
+                        required
+                        minLength="2"
+                        maxLength="30"
+                        onChange={handleCardNameChange}
+                    />
+                    <span className="popup__input-error" id="input-name-error"></span>
+                </label>
+                <label htmlFor="input-link" className="popup__field">
+                    <input
+                        type="url"
+                        id="input-link"
+                        className="popup__input"
+                        name="link"
+                        placeholder="Ссылка на картинку"
+                        required
+                        onChange={handleCardLinkChange}
+                    />
+                    <span className="popup__input-error" id="input-link-error"></span>
+                </label>
+            </>
+        </PopupWithForm>
     )
 }

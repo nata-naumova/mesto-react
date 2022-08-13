@@ -21,22 +21,21 @@ export function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
-            children={
-                <>
-                    <label htmlFor="input-avatar" className="popup__field">
-                        <input
-                            type="url"
-                            id="input-avatar"
-                            name="avatar"
-                            className="popup__input"
-                            placeholder="Ссылка на картинку"
-                            required
-                            ref={userAvatarRef}
-                        />
-                        <span className="popup__input-error" id="input-avatar-error"></span>
-                    </label>
-                </>
-            }
-        />
+        >
+            <>
+                <label htmlFor="input-avatar" className="popup__field">
+                    <input
+                        type="url"
+                        id="input-avatar"
+                        name="avatar"
+                        className="popup__input"
+                        placeholder="Ссылка на картинку"
+                        required
+                        ref={userAvatarRef}
+                    />
+                    <span className="popup__input-error" id="input-avatar-error"></span>
+                </label>
+            </>
+        </PopupWithForm>
     )
 }

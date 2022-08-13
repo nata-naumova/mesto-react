@@ -36,13 +36,13 @@ function App() {
   }, []);
 
   const handleEditAvatarClick = () => {
-    setIsEditAvatarPopupOpen(!isEditAvatarPopupOpen);
+    setIsEditAvatarPopupOpen(true);
   }
   const handleEditProfileClick = () => {
-    setIsEditProfilePopupOpen(!isEditProfilePopupOpen);
+    setIsEditProfilePopupOpen(true);
   }
   const handleAddPlaceClick = () => {
-    setIsAddPlacePopupOpen(!isAddPlacePopupOpen);
+    setIsAddPlacePopupOpen(true);
   };
 
   function handleCardClick(card) {

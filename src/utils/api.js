@@ -16,7 +16,7 @@ class Api {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Загрузка карточек с сервера ----------- */
@@ -24,7 +24,7 @@ class Api {
         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Редактирование профиля ----------- */
@@ -37,7 +37,7 @@ class Api {
                 about: data.about
             })
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Добавление новой карточки ----------- */
@@ -50,7 +50,7 @@ class Api {
                 link: data.link
             })
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Удаление карточки ----------- */
@@ -59,7 +59,7 @@ class Api {
             method: 'DELETE',
             headers: this._headers
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Постановка и снятие лайка ----------- */
@@ -68,7 +68,7 @@ class Api {
             method: 'PUT',
             headers: this._headers
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     deleteLike(card) {
@@ -76,7 +76,7 @@ class Api {
             method: 'DELETE',
             headers: this._headers
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 
     /* ---------- Обновление аватара пользователя ----------- */
@@ -88,7 +88,7 @@ class Api {
                 avatar: data.avatar
             })
         })
-            .then(res => this._parseResponse(res));
+            .then(this._parseResponse);
     }
 }
 const api = new Api({
