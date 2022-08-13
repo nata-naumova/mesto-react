@@ -34,6 +34,8 @@ npm start
 
 ## Дополнительно
 
-Документация React: [ссылка](https://ru.reactjs.org/docs/getting-started.html)
+- Документация React: [ссылка](https://ru.reactjs.org/docs/getting-started.html)
 
-Документация Create React App: [ссылка](https://ru.reactjs.org/docs/create-a-new-react-app.html)
+- Документация Create React App: [ссылка](https://ru.reactjs.org/docs/create-a-new-react-app.html)
+
+- [Демо проекта на Github Pages] (https://nata-naumova.github.io/mesto-react/)
